@@ -22,6 +22,8 @@ export class AgregarTareaPage implements OnInit {
 
   list: Task = {
     title: '',
+    id: '',
+    date: '',
     completed: false
   };
   

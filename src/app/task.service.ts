@@ -5,11 +5,12 @@ import { Observable } from 'rxjs';
 export interface Task {
   id?: string;
   title: string;
-  completed:boolean;
+  date: string;
+  completed: boolean;
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TaskService {
   private tasksCollection = collection(this.firestore, 'tasks');

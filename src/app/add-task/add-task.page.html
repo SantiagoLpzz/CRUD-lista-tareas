@@ -10,4 +10,27 @@
       <ion-title size="large">addTask</ion-title>
     </ion-toolbar>
   </ion-header>
+  <br>
+
+  <form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <!-- Campo para task -->
+     <div class="mb-6">
+      <label for="task" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">task</label>
+      <input type="text" id="task" name="title" [(ngModel)]="task" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-black" required #taskInput="ngModel">
+      <div *ngIf="taskInput.invalid && taskInput.touched" style="color: red;">
+        Please enter a valid format.
+      </div>
+     </div>
+     <br>
+
+     <!-- Boton de inicio de sesion -->
+      <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700" [disabled]="registerForm.invalid">
+        Registrar tarea
+      </button>
+  </form>
+  <br>
+  <!-- Boton para ir a home -->
+  <button (click)="onSignUp()" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">
+    Home
+  </button>
 </ion-content>

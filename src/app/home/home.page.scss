@@ -25,3 +25,101 @@
 #container a {
   text-decoration: none;
 }
+
+.center{
+  text-align: center;
+}
+
+.body {
+  background: #f4f4f9;
+  height: 100%;
+  font-weight: bolder;
+  padding: 20px;
+}
+
+.form-container, .table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+h2 {
+  color: #333;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.button {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.button:hover {
+  background: #45a049;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+th {
+  background: #007bff;
+  color: white;
+}
+
+.buttonS {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.delete {
+  background: #e74c3c;
+  color: white;
+}
+
+.delete:hover {
+  background: #c0392b;
+}
+
+.save {
+  background: #3498db;
+  color: white;
+}
+
+.save:hover {
+  background: #2980b9;
+}

@@ -1,26 +1,45 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-</ion-content>
-
-
-<ion-content>
-  <ion-button a href ='http://localhost:8100/add-task'>Agregar tarea</ion-button>
-  <br><br>
-  <ion-button a href ='http://localhost:8100/editar-tarea'>Editar-tarea tarea</ion-button>
-  <br><br>
-  <ion-button a href ='http://localhost:8100/eliminar-tarea'>Eliminar tarea</ion-button>
-  <br><br>
-  <ion-button a href ='http://localhost:8100/mostrar-tarea'>Mostrar tareas</ion-button>
+  <div class="body center">
+    <br>
+    <div class="form-container">
+      <h2>Gestión de Tareas</h2>
+      <label class="label">Nombre de la Tarea</label> <br>
+      <input class="input" [formControl]="title">
+      
+      <br>
+      <label class="label">Fecha de Inicio</label> <br>
+      <input class="input" type="date" [formControl]="fch">
+      
+      <br><br>
+      <button class="button" (click)="AddTask()">Añadir Tarea</button>
+    </div>
+    
+    <div class="table-container; center">
+      <table>
+        <thead>
+          <tr>
+            <th>NOMBRE</th>
+            <th>ID</th>
+            <th>FECHA</th>
+            <th>ESTADO</th>
+            <th>MODIFICACIONES</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tarea of tareass | async">
+            <td><input type="text" class="invis" [(ngModel)]="tarea.title"></td>
+            <td>{{tarea.id}}</td>
+            <td><input type="date" class="invis" [(ngModel)]="tarea.date"></td>
+            <td>
+              <ion-checkbox [checked]="tarea.completed" (ionChange)="Task(tarea.id,tarea.completed)"></ion-checkbox>
+            </td>
+            <td>
+              <button class="buttonS delete" (click)="DeleteTask(tarea.id)">ELIMINAR</button>
+              <button class="buttonS save" (click)="SaveTask(tarea.id, tarea.title, tarea.date)">GUARDAR</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </ion-content>
